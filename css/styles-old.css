@@ -520,8 +520,8 @@ margin-bottom: 0px;
 .partfolio-list-item:hover .overlay {
   transform: translateY(0);
 }
-
-/* Footer */
+/* 
+Footer
 
 .footer {
  background-color: #2E2F42;
@@ -624,7 +624,7 @@ max-width: 264px;
   display: flex;
   gap:24px;
   /* margin-left: 80px; */
- }
+ /* }
 
  .footer-label {
 
@@ -684,6 +684,8 @@ max-width: 264px;
   fill: #FFFFFF;
   margin-left: 16px;
  }
+ */ 
+
 
  /* -------modal----------- */
 
@@ -929,7 +931,7 @@ border-radius: 4px;
 
 /* Стилі для станів checked */
 .form-checkbox:checked + .checkbox-label .checkbox-icon {
-  background-color: var(--checked-bg-color, #404bbf); /* Фон при checked */
+  background-color: #404bbf; /* Фон при checked */
   border: none; /* Убираєм рамку */
   fill: #F4F4FD; 
 
