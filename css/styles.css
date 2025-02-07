@@ -411,7 +411,6 @@ button {
 .contacts-mobile {
  font-style: normal;
  margin-bottom: 48px;
- outline: 1px solid aqua;
 }
 
 .contacts-mobile-list {
@@ -487,12 +486,20 @@ list-style-type: none;
   background-color: #2E2F42;
   max-width: 320px;
   height: 100%;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero-320.jpg');
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/hero-320.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
  }
+
+ @media screen and (min-resolution: 2x), (-webkit-device-pixel-ratio: 2)  {
+  .hero-page {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/hero320@2x.jpg');
+   }
+ }
+
+
 
  .hero-section {
   padding: 72px 0;
@@ -554,8 +561,15 @@ list-style-type: none;
  .hero-page {
   max-width: 768px;
   height: 100%;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero-768.jpg');
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/hero-768.jpg');
  }
+
+ @media screen and (min-resolution: 2x), (-webkit-device-pixel-ratio: 2)  {
+  .hero-page {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/hero768@2x.jpg');
+   }
+ }
+
  .hero-section {
   padding: 112px 0;
   max-width: 768px;
@@ -588,7 +602,13 @@ list-style-type: none;
  .hero-page {
   max-width: 1440px;
   height: 100%;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/people-office-hw4.jpeg');
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/people-office-hw4.jpeg');
+ }
+
+ @media screen and (min-resolution: 2x), (-webkit-device-pixel-ratio: 2)  {
+  .hero-page {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero/hero11582x.jpg');
+   }
  }
 
  .hero-section {
@@ -1142,9 +1162,9 @@ border-radius: 4px;
 }
 /* формла - calc((100% - кільксть маржинів у рядку) / кількість елементів у рядку) */
 .partfolio-list-item {
- width: 100%;
- max-width: 356px;
-  
+  width: 100%;
+  max-width: 356px;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1238,6 +1258,7 @@ text-align: left;
 
  .partfolio-list-item {
   width: calc((100% - 24px * 2) / 3);
+  box-shadow: none;
  }
 
 }
@@ -1247,25 +1268,40 @@ text-align: left;
 
 .footer {
  background-color: #2E2F42;
- padding-top: 100px;
- padding-bottom: 100px;
+ padding-top: 96px;
+ padding-bottom: 96px;
 }
 
 .flex {
   display: flex;
-  align-items: baseline;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 72px;
+  margin: 0 auto;
+  height: 100%;
+ }
+
+ .content-wrapper {
+  gap: 24px
  }
 
  .wrapper-logo-text {
-  margin-right: 120px;
+  width: 288px;
+  text-align: center;
+  margin-bottom: 72px;
+ }
+
+ .footer-logo {
+  margin-bottom: 16px;
+ }
+
+ .text-footer {
+  text-align: left;
  }
 
  .wrapper-social {
   align-items: flex-start;
   gap: 16px;
-  margin-right: 80px;
  }
 
  .self {
@@ -1273,12 +1309,13 @@ text-align: left;
  }
 
  .social-media-text {
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
-  font-weight: 500;
+   font-size: 16px;
+   line-height: 1.5;
+   letter-spacing: 0.02em;
+   color: #FFFFFF;
+   font-weight: 500;
    margin-bottom: 16px;
+   text-align: center;
  }
 
  .social-footer {
@@ -1325,13 +1362,14 @@ text-align: left;
   letter-spacing: 0.03em;
 }
 
-
 a .footer-span {
    color: #F4F4FD;
 }
 
 .text-footer {
 max-width: 264px;
+font-size: 16px;
+font-weight: 400;
 
   color: #F4F4FD;
   line-height: 1.5;
@@ -1339,12 +1377,15 @@ max-width: 264px;
  }
 
  .form-wrapper {
+  text-align: center;
+ }
+
+ .footer-button {
 
  }
 
  .footer-form {
   display: flex;
-  flex-direction: column;
   gap:24px;
  }
 
@@ -1353,10 +1394,10 @@ max-width: 264px;
  }
 
  .email-input {
-  width: 264px;
+  width: 288px;
   height: 40px;
   border-radius: 4px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #fcfcfc3a;
   background-color: transparent; 
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   line-height: 2;
@@ -1365,11 +1406,12 @@ max-width: 264px;
   font-size: 12px;
   padding-left: 16px; 
   outline: none;
+  margin-bottom: 15px;
  }
 
  .email-input::placeholder {
   display: block;
-  color:#FFFFFF;
+  color:#fcfcfc3a;
   font-size: 12px;
   font-weight: 400;
   line-height: 2;
@@ -1396,6 +1438,7 @@ max-width: 264px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   text-align: left;
+  margin: 0 auto;
  }
 
  .footer-button:hover, .footer-button:focus {
@@ -1407,29 +1450,104 @@ max-width: 264px;
   margin-left: 16px;
  }
 
+/* ----------width: 768px---------- */
 
  @media screen and (min-width: 768px) {
-  .footer-form {
-   display: flex;
-   flex-direction: row;
-   gap:24px;
-  }
-  
-  
+
+   .footer .container {
+     max-width: 552px;
+     padding-left: 0px;
+     padding-right: 0px;
+   }
+
+   .flex {
+     align-items: baseline;
+     justify-content: left;
+   }
+
+   .content-wrapper {
+     display: flex;
+     flex-direction: row;
+   }
+
+   .footer-form {
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+     gap: 24px;
+   }
+
+   .social-footer {
+     justify-content: left;
+   }
+
+   .form-wrapper {
+     display: flex;
+     gap: 24px;
+   }
+
+   .wrapper-logo-text {
+     width: 264px;
+     text-align: left;
+     margin-bottom: 0px;
+   }
+
+   .social-media-text {
+     text-align: left;
+   }
+
+   .email-input {
+     width: 264px;
+     margin-bottom: 0px;
+   }
+
+   .footer-button {
+    align-self: flex-end;
+   }
  }
  
+ /* ----------width 1158px---------- */
 
  @media screen and (min-width: 1158px) {
 
+  .footer .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   .flex {
+   flex-direction: row;
    align-items: baseline;
    justify-content: flex-start;
    flex-wrap: wrap;
+   gap: 0px;
   }
+
+  .content-wrapper {
+    gap: 0px
+   }
 
   .footer-form {
    display: flex;
    gap:24px;
+  }
+
+  .form-wrapper {
+      width: 453px;
+   }
+
+  .wrapper-logo-text {
+   margin-right: 120px;
+  }
+
+  .wrapper-social {
+   margin-right: 80px;
+  }
+
+  .footer {
+   padding-top: 100px;
+   padding-bottom: 100px;
   }
   
  }
